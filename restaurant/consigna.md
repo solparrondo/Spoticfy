@@ -54,6 +54,13 @@ La respuesta debería ser:
 ```js
 app.use(express.json());
 ```
+
+- Cuando devolvemos un array de objetos, debemos hacerlo con:
+
+```js
+res.json(array);
+```
+
 ## Recursos
 
 - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
