@@ -47,6 +47,13 @@ La respuesta debería ser:
 }
 ```
 
+## Aclaraciones importantes
+
+- Es necesario escribir esta línea para que el servidor pueda recibir y entender el cuerpo de las peticiones POST:
+
+```js
+app.use(express.json());
+```
 ## Recursos
 
 - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
