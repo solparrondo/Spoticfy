@@ -43,7 +43,7 @@ La respuesta debería ser:
 ```json
 {
     "msg": "Pedido recibido",
-    "precio": 1500
+    "precio": 7000
 }
 ```
 
@@ -60,7 +60,6 @@ app.use(express.json());
 ```js
 res.json(array);
 ```
-
 
 ## Recursos
 
