@@ -18,6 +18,35 @@ const menu = require('./menu.json');
 6. Crear un endpoint `POST /pedido` que reciba un array de id's de platos y devuelva el precio total del pedido. El array de platos debe ser pasado en el cuerpo de la petición.
 7. Probar todos los endpoints creados utilizando REST Client.
 
+## Ejempl de request POST
+
+```rest
+POST http://localhost:9000/pedido HTTP/1.1
+Content-Type: application/json
+
+{
+    "productos": [
+        {
+            "id": 1,
+            "cantidad": 3
+        },
+        {
+            "id": 2,
+            "cantidad": 1
+        }
+    ]
+}
+```
+
+La respuesta debería ser:
+
+```json
+{
+    "msg": "Pedido recibido",
+    "precio": 1500
+}
+```
+
 ## Recursos
 
 - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
