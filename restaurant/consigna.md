@@ -59,7 +59,8 @@ app.use(express.json());
 
 ```js
 res.json(array);
-```
+```+
+
 
 ## Recursos
 
@@ -67,4 +68,5 @@ res.json(array);
 - [JSON](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON)
 - [Importar archivos](https://nodejs.org/api/modules.html#modules_file_modules)
 - [Método `filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter)
+- [Método `find()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/find)
 - [Método `reduce()` (completamente opcional)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/Reduce)
