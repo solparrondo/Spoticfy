@@ -59,7 +59,7 @@ app.use(express.json());
 
 ```js
 res.json(array);
-```+
+```
 
 
 ## Recursos
