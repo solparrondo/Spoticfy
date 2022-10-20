@@ -64,7 +64,7 @@ const getAlbumesByArtista = (req, res) => {
     // Deberían devolver los datos de la misma forma que getAlbumes
 };
 
-const getCanionesByArtista = (req, res) => {
+const getCancionesByArtista = (req, res) => {
     // Completar con la consulta que devuelve las canciones de un artista
     // (tener en cuenta que las canciones están asociadas a un álbum, y los álbumes a un artista)
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
@@ -78,5 +78,5 @@ module.exports = {
     updateArtista,
     deleteArtista,
     getAlbumesByArtista,
-    getCanionesByArtista,
+    getCancionesByArtista,
 };

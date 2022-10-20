@@ -50,7 +50,6 @@ const createCancion = (req, res) => {
     /*
         {
             "nombre": "Nombre de la canción",
-            "artista": "Id del artista",
             "album": "Id del album",
             "duracion": "Duración de la canción",
         }
@@ -65,7 +64,6 @@ const updateCancion = (req, res) => {
     /*
         {
             "nombre": "Nombre de la canción",
-            "artista": "Id del artista",
             "album": "Id del album",
             "duracion": "Duración de la canción",
         }
