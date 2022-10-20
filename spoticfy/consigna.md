@@ -8,6 +8,10 @@ Se pide **por favor** leer la consigna completa antes de empezar a programar. La
 
 El objetivo de este trabajo práctico es que puedas aplicar los conocimientos adquiridos en la materia para crear una API que permita la gestión de una biblioteca de música.
 
+### Grupos
+
+Este trabajo práctico se realizará en grupos de **mínimo** 2 personas y **máximo** 3 personas.
+
 ### Instalación
 
 Para poder hacer que el proyecto funcione, es necesario que instales las dependencias del mismo. Para ello, ejecuta el siguiente comando:
@@ -34,13 +38,13 @@ npm run dev
 
 El proyecto está compuesto por los siguientes archivos:
 
-- `package.json`: Contiene la información del proyecto y las dependencias que se deben instalar.
-- `index.js`: Es el archivo principal del proyecto. En él se configura el servidor y se definen las rutas de la API (hay que completarlo).
-- `db.js`: Contiene la lógica para conectarse a la base de datos (hay que completarlo).
-- `/controllers`: Contiene los controladores de la API para cada tabla (hay que completarlos).
-- `spoticfy.sql`: Contiene el archivo SQL para importar la base de datos en phpMyAdmin.
-- `consigna.md`: El archivo que estás leyendo.
-- `.REST`: Contiene los requests de la API para poder probarla con la extensión de VSCode REST Client.
+-   `package.json`: Contiene la información del proyecto y las dependencias que se deben instalar.
+-   `index.js`: Es el archivo principal del proyecto. En él se configura el servidor y se definen las rutas de la API (hay que completarlo).
+-   `db.js`: Contiene la lógica para conectarse a la base de datos (hay que completarlo).
+-   `/controllers`: Contiene los controladores de la API para cada tabla (hay que completarlos).
+-   `spoticfy.sql`: Contiene el archivo SQL para importar la base de datos en phpMyAdmin.
+-   `consigna.md`: El archivo que estás leyendo.
+-   `.REST`: Contiene los requests de la API para poder probarla con la extensión de VSCode REST Client.
 
 **Importante:**
 No es necesario que agregues archivos adicionales al proyecto. Todo lo que se pide se puede resolver con los archivos que ya están en el proyecto. Simplemente tenés que completar los archivos que ya están. Por otro lado, el archivo `.REST` no debe modificarse, ya que contiene las requests para probar la API.
@@ -49,9 +53,9 @@ No es necesario que agregues archivos adicionales al proyecto. Todo lo que se pi
 
 La base de datos que se brinda para este trabajo práctico está compuesta por las siguientes tablas:
 
-- `artistas`: Contiene los artistas de la biblioteca.
-- `albumes`: Contiene los álbumes de la biblioteca.
-- `canciones`: Contiene las canciones de la biblioteca.
+-   `artistas`: Contiene los artistas de la biblioteca.
+-   `albumes`: Contiene los álbumes de la biblioteca.
+-   `canciones`: Contiene las canciones de la biblioteca.
 
 Y tienen la siguiente estructura:
 
