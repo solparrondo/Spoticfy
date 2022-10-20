@@ -118,13 +118,6 @@ La API que debe tener las siguientes rutas:
 | `DEL`  | `/canciones/:id`            | Elimina la canción con el identificador `id`.                                          |
 | `PUT`  | `/canciones/:id/reproducir` | Incrementa en 1 la cantidad de reproducciones de la canción con el identificador `id`. |
 
-### API - Adicional
-
-Además de las rutas que se piden, se deben agregar dos rutas adicionales de tipo `GET`, inventadas por ustedes (**ORIGINALIDAD**), que devuelvan información adicional de la API, un poco más específica. Por ejemplo, podrían ser (obviamente, no pueden utilizar estas):
-
-- `/canciones/:duracion` que devuelva todas las canciones que tengan una duración mayor a la indicada en la ruta.
-- `/canciones/top` que devuelva las 10 canciones más reproducidas.
-
 ### Entrega
 
 La entrega del trabajo práctico se realizará a través **método a definir**. La fecha límite de entrega es el **pendiente**.
