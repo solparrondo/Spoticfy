@@ -2,6 +2,8 @@
 
 ## Consigna
 
+Se pide **por favor** leer la consigna completa antes de empezar a programar. Las preguntas que estén respondidas en la consigna no serán respondidas en persona.
+
 ### Objetivo
 
 El objetivo de este trabajo práctico es que puedas aplicar los conocimientos adquiridos en la materia para crear una API que permita la gestión de una biblioteca de música.
@@ -107,13 +109,21 @@ La API que debe tener las siguientes rutas:
 
 #### API - Canciones
 
-| Método | Ruta             | Descripción                                    |
-| ------ | ---------------- | ---------------------------------------------- |
-| `GET`  | `/canciones`     | Devuelve todas las canciones.                  |
-| `GET`  | `/canciones/:id` | Devuelve la canción con el identificador `id`. |
-| `POST` | `/canciones`     | Crea una nueva canción.                        |
-| `PUT`  | `/canciones/:id` | Modifica la canción con el identificador `id`. |
-| `DEL`  | `/canciones/:id` | Elimina la canción con el identificador `id`.  |
+| Método | Ruta                        | Descripción                                                                            |
+| ------ | --------------------------- | -------------------------------------------------------------------------------------- |
+| `GET`  | `/canciones`                | Devuelve todas las canciones.                                                          |
+| `GET`  | `/canciones/:id`            | Devuelve la canción con el identificador `id`.                                         |
+| `POST` | `/canciones`                | Crea una nueva canción.                                                                |
+| `PUT`  | `/canciones/:id`            | Modifica la canción con el identificador `id`.                                         |
+| `DEL`  | `/canciones/:id`            | Elimina la canción con el identificador `id`.                                          |
+| `PUT`  | `/canciones/:id/reproducir` | Incrementa en 1 la cantidad de reproducciones de la canción con el identificador `id`. |
+
+### API - Adicional
+
+Además de las rutas que se piden, se deben agregar dos rutas adicionales de tipo `GET`, inventadas por ustedes (**ORIGINALIDAD**), que devuelvan información adicional de la API, un poco más específica. Por ejemplo, podrían ser (obviamente, no pueden utilizar estas):
+
+- `/canciones/:duracion` que devuelva todas las canciones que tengan una duración mayor a la indicada en la ruta.
+- `/canciones/top` que devuelva las 10 canciones más reproducidas.
 
 ### Entrega
 
