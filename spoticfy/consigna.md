@@ -22,6 +22,12 @@ Para ejecutar el proyecto, ejecuta el siguiente comando:
 npm start
 ```
 
+O bien, si querés ejecutar el proyecto en modo desarrollo, ejecuta el siguiente comando:
+
+```bash
+npm run dev
+```
+
 ### Estructura del proyecto
 
 El proyecto está compuesto por los siguientes archivos:
