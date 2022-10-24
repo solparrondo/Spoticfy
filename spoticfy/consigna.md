@@ -86,6 +86,8 @@ Y tienen la siguiente estructura:
 
 ### API
 
+**Importante**: los filtros de las requests de la API se deben realizar con `SQL` y no con `JavaScript`.
+
 La API que debe tener las siguientes rutas:
 
 #### API - Artistas
@@ -124,4 +126,4 @@ La API que debe tener las siguientes rutas:
 
 ### Entrega
 
-La entrega del trabajo práctico se realizará a través **método a definir**. La fecha límite de entrega es el **pendiente**.
+La entrega del trabajo práctico se realizará a través **método a definir**. La fecha límite de entrega es el **viernes 4 de Noviembre a las 23:59**.
