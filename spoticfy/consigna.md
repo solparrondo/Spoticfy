@@ -126,4 +126,4 @@ La API que debe tener las siguientes rutas:
 
 ### Entrega
 
-La entrega del trabajo práctico se realizará a través del [este formulario](https://forms.gle/UhcR9AnvbPwj9Qju9) en el que entregarán todo el proyecto (**SIN LA CARPETA node_modules**) en un `.zip`. La fecha límite de entrega es el **viernes 4 de Noviembre a las 23:59**.
+La entrega del trabajo práctico se realizará a través del [este formulario](https://forms.gle/UhcR9AnvbPwj9Qju9) en el que entregarán todo el proyecto (**SIN LA CARPETA node_modules**) en un `.zip`. La fecha límite de entrega es el **viernes 4 de Noviembre a las 23:59** (para el curso `ABE 1` i.e. el grupo que tenemos clase únicamente los lunes, la fecha de entrega es el **martes 8 de Noviembre a las 23:59**).
