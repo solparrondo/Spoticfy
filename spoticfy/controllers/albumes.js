@@ -19,6 +19,15 @@ const getAlbumes = (_, res) => {
             ...
         ]
     */
+
+        conn.query("SELECT * FROM albumes", (err, rows) => {
+            if (err) {
+                console.error("Error: ", err);
+                return;
+            }
+        
+            res.send(rows);
+        });
 };
 
 const getAlbum = (req, res) => {
@@ -32,6 +41,21 @@ const getAlbum = (req, res) => {
             "nombre_artista": "Nombre del artista"
         }
     */
+
+
+    const {id} = req.params;
+
+    conn.query("SELECT * FROM albumes WHERE id = ?", [id], (err, rows) => {
+        if (err) {
+            console.error("Error: ", err);
+            return;
+        }
+    
+        res.send(rows);
+    });
+
+    
+
 };
 
 const createAlbum = (req, res) => {
@@ -44,6 +68,16 @@ const createAlbum = (req, res) => {
             "artista": "Id del artista"
         }
     */
+
+    const {nombre, artista} = req.body;
+    conn.query("INSERT INTO albumes (nombre, artista) VALUES (?,?) ", [nombre, artista], (err, rows) => {
+        if (err) {
+            console.error("Error: ", err);
+            return;
+        }
+    
+        res.send("Se ha creado correctamente", rows);
+    });
 };
 
 const updateAlbum = (req, res) => {
@@ -56,17 +90,51 @@ const updateAlbum = (req, res) => {
             "artista": "Id del artista"
         }
     */
+
+    const {id} = req.params;
+    const {nombre, artista} = req.body;
+
+    conn.query ("UPDATE albumes SET nombre = ?, artista = ? WHERE id = ?", [nombre, artista, id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send ("Se han actualizado correctamente", rows);
+    });
 };
 
 const deleteAlbum = (req, res) => {
     // Completar con la consulta que elimina un album
     // Recordar que los parámetros de una consulta DELETE se encuentran en req.params
+
+    const {id} = req.params;
+    conn.query ("DELETE FROM albumes WHERE id = ?", [id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send ("Se ha eliminado correctamente", rows);
+    });
 };
 
 const getCancionesByAlbum = (req, res) => {
     // Completar con la consulta que devuelve las canciones de un album
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getCanciones
+
+    const {id_album} = req.params;
+    conn.query ("SELECT canciones.nombre FROM canciones WHERE canciones.albumes = ?", [id_album], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send (rows);
+    });
+
+  
 };
 
 module.exports = {

@@ -17,6 +17,16 @@ const getArtistas = (_, res) => {
             ...
         ]
     */
+    
+    conn.query("SELECT * FROM artistas", (err, rows) => {
+        if (err) {
+            console.error("Error: ", err);
+            return;
+        }
+    
+        res.send(rows);
+    });
+    
 };
 
 const getArtista = (req, res) => {
