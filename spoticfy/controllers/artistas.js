@@ -39,6 +39,17 @@ const getArtista = (req, res) => {
             "nombre": "Nombre del artista"
         }
     */
+
+        const {id} = req.params;
+
+        conn.query("SELECT * FROM artistas WHERE id = ?", [id], (err, rows) => {
+            if (err) {
+                console.error("Error: ", err);
+                return;
+            }
+        
+            res.send(rows);
+        });
 };
 
 const createArtista = (req, res) => {
@@ -50,6 +61,16 @@ const createArtista = (req, res) => {
             "nombre": "Nombre del artista",
         }
     */
+
+        const {nombre} = req.body;
+        conn.query("INSERT INTO artistas (nombre) VALUES (?) ", [nombre], (err, rows) => {
+            if (err) {
+                console.error("Error: ", err);
+                return;
+            }
+        
+            res.send("Se ha creado correctamente", rows);
+        });
 };
 
 const updateArtista = (req, res) => {
