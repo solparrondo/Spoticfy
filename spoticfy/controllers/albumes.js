@@ -124,8 +124,8 @@ const getCancionesByAlbum = (req, res) => {
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getCanciones
 
-    const {id_album} = req.params;
-    conn.query ("SELECT canciones.nombre FROM canciones WHERE canciones.albumes = ?", [id_album], (err, rows) => {
+    const {album} = req.params;
+    conn.query ("SELECT nombre FROM canciones WHERE album = ?", [album], (err, rows) => {
         if (err){
             console.log("Error: ", err)
             return;
