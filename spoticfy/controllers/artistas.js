@@ -82,11 +82,35 @@ const updateArtista = (req, res) => {
             "nombre": "Nombre del artista"
         }
     */
+
+        const {id} = req.params;
+        const {nombre, artista} = req.body;
+
+        conn.query ("UPDATE artistas SET nombre = ?, artista = ? WHERE id = ?", [nombre, artista, id], (err, rows) => {
+            if (err){
+                console.log("Error: ", err)
+                return;
+            }
+    
+            res.send ("Se han actualizado correctamente", rows);
+        });
 };
 
 const deleteArtista = (req, res) => {
     // Completar con la consulta que elimina un artista
     // Recordar que los parámetros de una consulta DELETE se encuentran en req.params
+
+    const {id} = req.params;
+    conn.query ("DELETE FROM artistas WHERE id = ?", [id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send ("Se ha eliminado correctamente", rows);
+    });
+
+
 };
 
 const getAlbumesByArtista = (req, res) => {

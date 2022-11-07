@@ -25,6 +25,15 @@ const getCanciones = (_, res) => {
             ...
         ]
     */
+
+        conn.query("SELECT * FROM canciones", (err, rows) => {
+            if (err) {
+                console.error("Error: ", err);
+                return;
+            }
+        
+            res.send(rows);
+        });
 };
 
 const getCancion = (req, res) => {
@@ -41,6 +50,17 @@ const getCancion = (req, res) => {
             "reproducciones": "Reproducciones de la canción"
         }
     */
+
+        const {id} = req.params;
+        
+        conn.query("SELECT * FROM canciones WHERE id = ?", [id], (err, rows) => {
+            if (err) {
+                console.error("Error: ", err);
+                return;
+            }
+        
+            res.send(rows);
+        });
 };
 
 const createCancion = (req, res) => {
@@ -55,6 +75,16 @@ const createCancion = (req, res) => {
         }
     */
     // (Reproducciones se inicializa en 0)
+
+        const {nombre, album, duracion} = req.body;
+        conn.query("INSERT INTO canciones (nombre, album, duracion) VALUES (?, ?, ?) ", [nombre, album, duracion], (err, rows) => {
+            if (err) {
+                console.error("Error: ", err);
+                return;
+            }
+        
+            res.send("Se ha creado correctamente", rows);
+        });
 };
 
 const updateCancion = (req, res) => {
@@ -69,16 +99,49 @@ const updateCancion = (req, res) => {
         }
     */
     // (Reproducciones no se puede modificar con esta consulta)
+
+    const {id} = req.params;
+    const {nombre, album, duracion} = req.body;
+
+    conn.query ("UPDATE canciones SET nombre = ?, album = ?, duracion = ? WHERE id = ?", [nombre, album, duracion, id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send ("Se han actualizado correctamente", rows);
+    });
 };
 
 const deleteCancion = (req, res) => {
     // Completar con la consulta que elimina una canción
     // Recordar que los parámetros de una consulta DELETE se encuentran en req.params
+
+    const {id} = req.params;
+    conn.query ("DELETE FROM canciones WHERE id = ?", [id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send ("Se ha eliminado correctamente", rows);
+    });
 };
 
 const reproducirCancion = (req, res) => {
     // Completar con la consulta que aumenta las reproducciones de una canción
     // En este caso es una consulta PUT, pero no recibe ningún parámetro en el body, solo en los params
+
+    const {id} = req.params;
+    conn.query ("UPDATE canciones SET duracion = duracion + 1 WHERE id = ?", [duracion, id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send ("Se ha actualizado correctamente", rows);
+    });
+
 };
 
 module.exports = {
