@@ -124,6 +124,17 @@ const getCancionesByArtista = (req, res) => {
     // (tener en cuenta que las canciones están asociadas a un álbum, y los álbumes a un artista)
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getCanciones
+
+    const {id} = req.params;
+    conn.query("SELECT canciones.nombre FROM canciones LEFT JOIN albumes ON canciones.album = albumes.id WHERE albumes.artista = ? ", [id], (err, rows) => {
+        if (err) {
+            console.error("Error: ", err);
+            return;
+        }
+    
+        res.send(rows);
+    });    
+
 };
 
 module.exports = {
