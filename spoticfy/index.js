@@ -7,6 +7,7 @@ const albumes = require("./controllers/albumes");
 const canciones = require("./controllers/canciones");
 
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.get("/", (_, res) => {
     res.send("SpoTICfy API working!");
@@ -20,6 +21,8 @@ app.get("/", (_, res) => {
 // artistas.getArtistas;
 // artistas.getArtista;
 // ...
+
+app.get("/artistas/:id/canciones", artistas.getCancionesByArtista);
 
 // Albumes
 // Completar con las rutas de albumes

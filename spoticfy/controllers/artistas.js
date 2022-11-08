@@ -69,7 +69,7 @@ const createArtista = (req, res) => {
                 return;
             }
         
-            res.send("Se ha creado correctamente", rows);
+            res.send("Se ha creado correctamente");
         });
 };
 
@@ -92,7 +92,7 @@ const updateArtista = (req, res) => {
                 return;
             }
     
-            res.send ("Se han actualizado correctamente", rows);
+            res.send ("Se han actualizado correctamente");
         });
 };
 
@@ -107,7 +107,7 @@ const deleteArtista = (req, res) => {
             return;
         }
 
-        res.send ("Se ha eliminado correctamente", rows);
+        res.send ("Se ha eliminado correctamente");
     });
 
 
@@ -117,6 +117,16 @@ const getAlbumesByArtista = (req, res) => {
     // Completar con la consulta que devuelve las canciones de un artista 
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getAlbumes
+    const {id} = req.params;
+    conn.query ("SELECT * FROM albumes WHERE artista = ?", [id], (err, rows) => {
+        if (err){
+            console.log("Error: ", err)
+            return;
+        }
+
+        res.send (rows);
+    });
+
 };
 
 const getCancionesByArtista = (req, res) => {
@@ -126,7 +136,7 @@ const getCancionesByArtista = (req, res) => {
     // Deberían devolver los datos de la misma forma que getCanciones
 
     const {id} = req.params;
-    conn.query("SELECT canciones.nombre FROM canciones LEFT JOIN albumes ON canciones.album = albumes.id WHERE albumes.artista = ? ", [id], (err, rows) => {
+    conn.query("SELECT canciones.* FROM canciones LEFT JOIN albumes ON canciones.album = albumes.id WHERE albumes.artista = ? ", [id], (err, rows) => {
         if (err) {
             console.error("Error: ", err);
             return;

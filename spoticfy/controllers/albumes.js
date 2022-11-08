@@ -70,13 +70,14 @@ const createAlbum = (req, res) => {
     */
 
     const {nombre, artista} = req.body;
+    console.log(req.body)
     conn.query("INSERT INTO albumes (nombre, artista) VALUES (?,?) ", [nombre, artista], (err, rows) => {
         if (err) {
             console.error("Error: ", err);
             return;
         }
     
-        res.send("Se ha creado correctamente", rows);
+        res.send("Se ha creado correctamente");
     });
 };
 
@@ -100,7 +101,7 @@ const updateAlbum = (req, res) => {
             return;
         }
 
-        res.send ("Se han actualizado correctamente", rows);
+        res.send ("Se han actualizado correctamente");
     });
 };
 
@@ -115,7 +116,7 @@ const deleteAlbum = (req, res) => {
             return;
         }
 
-        res.send ("Se ha eliminado correctamente", rows);
+        res.send ("Se ha eliminado correctamente");
     });
 };
 
@@ -124,8 +125,8 @@ const getCancionesByAlbum = (req, res) => {
     // Recordar que los parámetros de una consulta GET se encuentran en req.params
     // Deberían devolver los datos de la misma forma que getCanciones
 
-    const {album} = req.params;
-    conn.query ("SELECT nombre FROM canciones WHERE album = ?", [album], (err, rows) => {
+    const {id} = req.params;
+    conn.query ("SELECT * FROM canciones WHERE album = ?", [id], (err, rows) => {
         if (err){
             console.log("Error: ", err)
             return;

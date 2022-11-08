@@ -83,7 +83,7 @@ const createCancion = (req, res) => {
                 return;
             }
         
-            res.send("Se ha creado correctamente", rows);
+            res.send("Se ha creado correctamente");
         });
 };
 
@@ -109,7 +109,7 @@ const updateCancion = (req, res) => {
             return;
         }
 
-        res.send ("Se han actualizado correctamente", rows);
+        res.send ("Se han actualizado correctamente");
     });
 };
 
@@ -124,7 +124,7 @@ const deleteCancion = (req, res) => {
             return;
         }
 
-        res.send ("Se ha eliminado correctamente", rows);
+        res.send ("Se ha eliminado correctamente");
     });
 };
 
@@ -139,7 +139,7 @@ const reproducirCancion = (req, res) => {
             return;
         }
 
-        res.send ("Se ha actualizado correctamente", rows);
+        res.send ("Se ha actualizado correctamente");
     });
 
 };
