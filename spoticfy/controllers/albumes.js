@@ -71,7 +71,7 @@ const createAlbum = (req, res) => {
 
     const {nombre, artista} = req.body;
     console.log(req.body)
-    conn.query("INSERT INTO albumes (nombre, artista) VALUES (?,?) ", [nombre, artista], (err, rows) => {
+    conn.query("INSERT INTO albumes (nombre, artista) VALUES (?,?) ", [nombre, artista], (err) => {
         if (err) {
             console.error("Error: ", err);
             return;
@@ -95,7 +95,7 @@ const updateAlbum = (req, res) => {
     const {id} = req.params;
     const {nombre, artista} = req.body;
 
-    conn.query ("UPDATE albumes SET nombre = ?, artista = ? WHERE id = ?", [nombre, artista, id], (err, rows) => {
+    conn.query ("UPDATE albumes SET nombre = ?, artista = ? WHERE id = ?", [nombre, artista, id], (err) => {
         if (err){
             console.log("Error: ", err)
             return;
@@ -110,7 +110,7 @@ const deleteAlbum = (req, res) => {
     // Recordar que los parámetros de una consulta DELETE se encuentran en req.params
 
     const {id} = req.params;
-    conn.query ("DELETE FROM albumes WHERE id = ?", [id], (err, rows) => {
+    conn.query ("DELETE FROM albumes WHERE id = ?", [id], (err) => {
         if (err){
             console.log("Error: ", err)
             return;

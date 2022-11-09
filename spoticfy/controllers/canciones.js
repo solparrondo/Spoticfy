@@ -77,7 +77,8 @@ const createCancion = (req, res) => {
     // (Reproducciones se inicializa en 0)
 
         const {nombre, album, duracion} = req.body;
-        conn.query("INSERT INTO canciones (nombre, album, duracion) VALUES (?, ?, ?) ", [nombre, album, duracion], (err, rows) => {
+        const reproducciones = 0;
+        conn.query("INSERT INTO canciones (nombre, album, duracion, reproducciones) VALUES (?, ?, ?, ?) ", [nombre, album, duracion, reproducciones], (err) => {
             if (err) {
                 console.error("Error: ", err);
                 return;
@@ -103,7 +104,7 @@ const updateCancion = (req, res) => {
     const {id} = req.params;
     const {nombre, album, duracion} = req.body;
 
-    conn.query ("UPDATE canciones SET nombre = ?, album = ?, duracion = ? WHERE id = ?", [nombre, album, duracion, id], (err, rows) => {
+    conn.query ("UPDATE canciones SET nombre = ?, album = ?, duracion = ? WHERE id = ?", [nombre, album, duracion, id], (err) => {
         if (err){
             console.log("Error: ", err)
             return;
@@ -118,7 +119,7 @@ const deleteCancion = (req, res) => {
     // Recordar que los parámetros de una consulta DELETE se encuentran en req.params
 
     const {id} = req.params;
-    conn.query ("DELETE FROM canciones WHERE id = ?", [id], (err, rows) => {
+    conn.query ("DELETE FROM canciones WHERE id = ?", [id], (err) => {
         if (err){
             console.log("Error: ", err)
             return;
@@ -133,12 +134,11 @@ const reproducirCancion = (req, res) => {
     // En este caso es una consulta PUT, pero no recibe ningún parámetro en el body, solo en los params
 
     const {id} = req.params;
-    conn.query ("UPDATE canciones SET duracion = duracion + 1 WHERE id = ?", [duracion, id], (err, rows) => {
+    conn.query ("UPDATE canciones SET canciones.duracion = canciones.duracion + 1 WHERE id = ?", [id], (err) => {
         if (err){
             console.log("Error: ", err)
             return;
         }
-
         res.send ("Se ha actualizado correctamente");
     });
 
